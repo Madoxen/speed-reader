@@ -47,7 +47,7 @@ class PlayerControls extends Component<IProps>  {
         return (
             <> {/*Fragment*/}
                 <Slider step={1} valueLabelDisplay="auto" onChange={this.onSliderValueChange} max={this.maxWordsPerMinute} min={this.minWordsPerMinute}></Slider>
-                <Slider step={1} valueLabelDisplay="on" value={this.props.currentWordIndex} max={this.props.wordMax} min={0} draggable={false}></Slider>
+                <Slider step={1} valueLabelDisplay="on" value={this.props.currentWordIndex} max={this.props.wordMax} min={0}></Slider>
                 <Button onClick={this.onButtonClick}>
                     <a>{this.props.currentState}</a>
                 </Button>

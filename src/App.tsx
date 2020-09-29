@@ -36,7 +36,8 @@ class App extends Component<IProps, IState>  {
   }
 
   componentWillUnmount() {
-    clearInterval(this.timerID)
+    if (this.timerID !== null)
+      clearInterval(this.timerID)
   }
 
 
@@ -47,16 +48,20 @@ class App extends Component<IProps, IState>  {
 
   handleOnSpeedChange(speed: number) {
     this.setState({ currentSpeed: speed });
-    this.resetInterval();
+    if (this.state.currentState === "playing")
+      this.resetInterval();
   }
 
 
   handleBookChanged(slicedBook: string[]) {
-    //If book changes, set word array to the new one, and reset word index
-    this.setState({ currentBook: slicedBook, currentWordIndex: 0 });
     if (this.timerID !== null) {
       window.clearInterval(this.timerID);
     }
+
+    //If book changes, set word array to the new one, and reset word index
+    this.setState({ currentBook: slicedBook, currentWordIndex: 0 });
+
+
   }
 
   //cycles to next word
@@ -68,19 +73,21 @@ class App extends Component<IProps, IState>  {
 
   //toggles interval timer on and off
   private toggleInterval() {
-    if (this.state.currentState == "playing") {
+    if (this.timerID !== -1) {
+      window.clearInterval(this.timerID);
+      this.timerID = -1;
+    }
+    else {
       //ex. WPM -> minute per word -> ms per word so 1/WPM * 60 * 1000
       this.timerID = window.setInterval(this.cycleWord, (1.0 / this.state.currentSpeed) * 60000.0) //100 WPM -> 0.01 * 60000 = 600 ms = 0.6sec gut
-    }
-    else if (this.timerID !== null) {
-      window.clearInterval(this.timerID);
     }
   }
 
   //Resets interval timer that cycles words
   private resetInterval() {
-    if (this.timerID !== null) {
+    if (this.timerID !== -1) {
       window.clearInterval(this.timerID);
+      this.timerID = -1;
     }
     this.timerID = window.setInterval(this.cycleWord, (1.0 / this.state.currentSpeed) * 60000.0) //100 WPM -> 0.01 * 60000 = 600 ms = 0.6sec gut
   }
