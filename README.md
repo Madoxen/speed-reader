@@ -1,3 +1,14 @@
+
+## Information
+
+This is simple speed-reading react app. It allows for speed-reading any text that you give it, using the fact that you dont have to move your eyes. 
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

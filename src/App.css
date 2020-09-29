@@ -3,15 +3,16 @@
 }
 
 .App-header {
+  top: 0px;
+  width: 100%;
   background-color: #282c34;
-  display: auto;
-  flex-direction: column;
+  display: flexbox;
+  position: fixed;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc( 2vmin);
   color: white;
 }
-
 
 .App-link {
   color: #61dafb;
@@ -21,7 +22,7 @@
 {
   width: 50%;
   position: fixed;
-  bottom: 0px;
+  bottom: 50px;
   left: 25%;
   align-items: center;
   justify-content: center;
@@ -32,9 +33,16 @@
 .App-word-container
 {
   position: fixed;
+  justify-content: space-between;
   bottom: 50%;
   width: 50%;
   left: 25%;
   text-align: center;
-  font-size: calc(40px + 2vmin);
+  font-size: calc( 5vmin);
+}
+
+.App-button
+{
+  background-color: #282c34;
+  color: #282c34;
 }

@@ -1,7 +1,7 @@
 import React, { ChangeEvent, Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, Slider } from '@material-ui/core';
+import { Button, createMuiTheme, Slider, ThemeProvider } from '@material-ui/core';
 import { isPropertySignature, parseConfigFileTextToJson } from 'typescript';
 
 
@@ -52,9 +52,9 @@ class PlayerControls extends Component<IProps>  {
     render() {
         return (
             <> {/*Fragment*/}
-                <Slider step={1} valueLabelDisplay="auto" onChange={this.onSliderValueChange} max={this.maxWordsPerMinute} min={this.minWordsPerMinute}></Slider>
-                <Slider step={1} valueLabelDisplay="on" onChange={this.onWordIndexSliderValueChange} max={this.props.wordMax} min={0} value={this.props.wordIndex}></Slider>
-                <Button onClick={this.onButtonClick}>
+                <Slider color="primary" step={1} valueLabelDisplay="on" onChange={this.onWordIndexSliderValueChange} max={this.props.wordMax} min={0} value={this.props.wordIndex}></Slider>
+                <Slider color="primary" step={1} valueLabelDisplay="auto" onChange={this.onSliderValueChange} max={this.maxWordsPerMinute} min={this.minWordsPerMinute}></Slider>
+                <Button color="primary" variant="contained" className="App-button" onClick={this.onButtonClick}>
                     <a>{this.props.currentState}</a>
                 </Button>
             </>

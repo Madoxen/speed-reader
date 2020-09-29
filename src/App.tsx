@@ -1,3 +1,4 @@
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import React, { Component } from 'react';
 import './App.css';
 import BookProcessor from './BookProcessor';
@@ -17,6 +18,23 @@ interface IState {
 class App extends Component<IProps, IState>  {
 
   timerID: number = -1;
+
+  theme = createMuiTheme({
+    palette: {
+      primary: {
+        light: '#757ce8',
+        main: '#3f50b5',
+        dark: '#002884',
+        contrastText: '#fff',
+      },
+      secondary: {
+        light: '#ff7961',
+        main: '#f44336',
+        dark: '#ba000d',
+        contrastText: '#000',
+      },
+    },
+  });
 
 
   constructor(props: IProps) {
@@ -97,9 +115,6 @@ class App extends Component<IProps, IState>  {
   }
 
 
-
-
-
   render() {
     let book = this.state.currentBook;
     let word: string | null = null;
@@ -115,23 +130,25 @@ class App extends Component<IProps, IState>  {
           <h1>Speed Reader</h1>
         </header>
 
+        <ThemeProvider theme={this.theme}>
+          <WordContainer word={word}></WordContainer>
 
-        <WordContainer word={word}></WordContainer>
+          <div className="App-controls">
 
-        <div className="App-controls">
-      
-          <BookProcessor bookChangedHandler={this.handleBookChanged}></BookProcessor>
-          <PlayerControls
-            currentWordIndex={this.state.currentWordIndex}
-            wordMax={maxWords}
-            wordIndex={this.state.currentWordIndex}
-            currentSpeed={this.state.currentSpeed}
-            currentState={this.state.currentState}
-            onSpeedChanged={this.handleOnSpeedChange}
-            onStateChanged={this.handleOnPlayerStateChange}
-            onWordIndexChanged={this.handleWordIndexChanged}
-          ></PlayerControls>
-        </div>
+            <BookProcessor bookChangedHandler={this.handleBookChanged}></BookProcessor>
+            <PlayerControls
+              currentWordIndex={this.state.currentWordIndex}
+              wordMax={maxWords}
+              wordIndex={this.state.currentWordIndex}
+              currentSpeed={this.state.currentSpeed}
+              currentState={this.state.currentState}
+              onSpeedChanged={this.handleOnSpeedChange}
+              onStateChanged={this.handleOnPlayerStateChange}
+              onWordIndexChanged={this.handleWordIndexChanged}
+            ></PlayerControls>
+          </div>
+        </ThemeProvider>
+
 
 
       </div>
