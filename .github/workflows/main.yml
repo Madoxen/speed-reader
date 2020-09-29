@@ -37,6 +37,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Build
+        env:
+          CI: ""
         run: npm run build  
         
       - name: Deploy to Github Pages
