@@ -26,6 +26,7 @@ class App extends Component<IProps, IState>  {
     this.handleOnSpeedChange = this.handleOnSpeedChange.bind(this);
     this.handleBookChanged = this.handleBookChanged.bind(this);
     this.cycleWord = this.cycleWord.bind(this);
+    this.handleWordIndexChanged = this.handleWordIndexChanged.bind(this);
 
     this.state = {
       currentWordIndex: 0,
@@ -60,9 +61,12 @@ class App extends Component<IProps, IState>  {
 
     //If book changes, set word array to the new one, and reset word index
     this.setState({ currentBook: slicedBook, currentWordIndex: 0 });
-
-
   }
+
+  handleWordIndexChanged(newIndex: number) {
+    this.setState({ currentWordIndex: newIndex });
+  }
+
 
   //cycles to next word
   private cycleWord() {
@@ -121,10 +125,12 @@ class App extends Component<IProps, IState>  {
           <PlayerControls
             currentWordIndex={this.state.currentWordIndex}
             wordMax={maxWords}
+            wordIndex={this.state.currentWordIndex}
             currentSpeed={this.state.currentSpeed}
             currentState={this.state.currentState}
             onSpeedChanged={this.handleOnSpeedChange}
             onStateChanged={this.handleOnPlayerStateChange}
+            onWordIndexChanged={this.handleWordIndexChanged}
           ></PlayerControls>
         </div>
 
