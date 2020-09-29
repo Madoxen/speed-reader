@@ -15,37 +15,36 @@ interface IProps {
 
 
 class PlayerControls extends Component<IProps>  {
+
+    maxWordsPerMinute : number = 1000;
+    minWordsPerMinute : number = 0;
+
     constructor(props: IProps) {
         super(props);
         this.onButtonClick = this.onButtonClick.bind(this);
         this.onSliderValueChange = this.onSliderValueChange.bind(this);
     }
 
-
-    onButtonClick(e : any)
-    {
-        let newState : string = "";
+    onButtonClick(e: any) {
+        let newState: string = "";
         //TODO: Isnt there a better way? 
-        if(this.props.currentState === "playing")
-        {
+        if (this.props.currentState === "playing") {
             newState = "paused";
         }
-        else
-        {
+        else {
             newState = "playing"
         }
         this.props.onStateChanged(newState);
     }
 
-    onSliderValueChange(e : any, value : number | number[])
-    {
+    onSliderValueChange(e: any, value: number | number[]) {
         this.props.onSpeedChanged(value);
     }
 
     render() {
         return (
             <> {/*Fragment*/}
-                <Slider step={1} valueLabelDisplay="auto" onChange={this.onSliderValueChange}></Slider>
+                <Slider step={1} valueLabelDisplay="auto" onChange={this.onSliderValueChange} max={this.maxWordsPerMinute} min={this.minWordsPerMinute}></Slider>
                 <Button onClick={this.onButtonClick}>
                     <a>{this.props.currentState}</a>
                 </Button>

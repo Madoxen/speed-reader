@@ -1,5 +1,4 @@
 .App {
-
 }
 
 .App-header {
@@ -13,7 +12,17 @@
 }
 
 
-
 .App-link {
   color: #61dafb;
 }
+
+.App-controls
+{
+  position: fixed;
+  bottom: 0px;
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
