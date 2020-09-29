@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/speed-reader/static/css/main.18e4c6e9.chunk.css",
+    "main.js": "/speed-reader/static/js/main.1ece3f94.chunk.js",
+    "main.js.map": "/speed-reader/static/js/main.1ece3f94.chunk.js.map",
+    "runtime-main.js": "/speed-reader/static/js/runtime-main.517fc4f2.js",
+    "runtime-main.js.map": "/speed-reader/static/js/runtime-main.517fc4f2.js.map",
+    "static/js/2.cc5e7410.chunk.js": "/speed-reader/static/js/2.cc5e7410.chunk.js",
+    "static/js/2.cc5e7410.chunk.js.map": "/speed-reader/static/js/2.cc5e7410.chunk.js.map",
+    "index.html": "/speed-reader/index.html",
+    "precache-manifest.13901400baabb871899b675b0f9b1f9d.js": "/speed-reader/precache-manifest.13901400baabb871899b675b0f9b1f9d.js",
+    "service-worker.js": "/speed-reader/service-worker.js",
+    "static/css/main.18e4c6e9.chunk.css.map": "/speed-reader/static/css/main.18e4c6e9.chunk.css.map",
+    "static/js/2.cc5e7410.chunk.js.LICENSE.txt": "/speed-reader/static/js/2.cc5e7410.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.517fc4f2.js",
+    "static/js/2.cc5e7410.chunk.js",
+    "static/css/main.18e4c6e9.chunk.css",
+    "static/js/main.1ece3f94.chunk.js"
+  ]
+}
