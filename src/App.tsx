@@ -116,11 +116,10 @@ class App extends Component<IProps, IState>  {
         </header>
 
 
-
-
+        <WordContainer word={word}></WordContainer>
 
         <div className="App-controls">
-          <WordContainer word={word}></WordContainer>
+      
           <BookProcessor bookChangedHandler={this.handleBookChanged}></BookProcessor>
           <PlayerControls
             currentWordIndex={this.state.currentWordIndex}

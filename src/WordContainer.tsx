@@ -20,7 +20,7 @@ class WordContainer extends Component<IProps>
     {
         return(
             <>
-                <a>{this.props.word}</a>
+                <p className="App-word-container">{this.props.word}</p>
             </>
         );
     }

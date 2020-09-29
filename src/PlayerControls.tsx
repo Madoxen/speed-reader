@@ -20,7 +20,7 @@ interface IProps {
 class PlayerControls extends Component<IProps>  {
 
     maxWordsPerMinute: number = 1000;
-    minWordsPerMinute: number = 0;
+    minWordsPerMinute: number = 1;
 
     constructor(props: IProps) {
         super(props);
