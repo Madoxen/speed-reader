@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Button, Slider } from '@material-ui/core';
 import PlayerControls from './PlayerControls';
 
 
@@ -50,13 +48,12 @@ class App extends Component<IProps, IState>  {
 
         <div>
           <PlayerControls
-            currentSpeed={this.state.currentSpeed} 
+            currentSpeed={this.state.currentSpeed}
             currentState={this.state.currentState}
             onSpeedChanged={this.handleOnSpeedChange}
             onStateChanged={this.handleOnPlayerStateChange}
           ></PlayerControls>
         </div>
-
 
         <a>{this.state.currentWord}</a>
       </div>

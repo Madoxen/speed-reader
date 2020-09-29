@@ -37,15 +37,15 @@ class PlayerControls extends Component<IProps>  {
         this.props.onStateChanged(newState);
     }
 
-    onSliderValueChange(e : any)
+    onSliderValueChange(e : any, value : number | number[])
     {
-        this.props.onSpeedChanged(e.target.value)
+        this.props.onSpeedChanged(value);
     }
 
     render() {
         return (
             <> {/*Fragment*/}
-                <Slider value={this.props.currentSpeed} step={1} valueLabelDisplay="auto" onChange={this.onSliderValueChange}></Slider>
+                <Slider step={1} valueLabelDisplay="auto" onChange={this.onSliderValueChange}></Slider>
                 <Button onClick={this.onButtonClick}>
                     <a>{this.props.currentState}</a>
                 </Button>
